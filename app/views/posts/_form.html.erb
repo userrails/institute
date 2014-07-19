@@ -1,0 +1,25 @@
+<%=form_for @post, :remote=>true do |f|%>
+
+  <div id="error" class="alert alert-error" style="display:none">
+    <a class="close">X</a>
+    <%= render 'errors' %>
+  </div>
+
+  <div id="success" class="alert alert-success" style="display:none">
+    <a class="close">X</a>
+  </div>
+
+  <div>
+    <%=f.label :title%>
+    <%=f.text_field :title, :id => "title"%>
+  </div>
+
+  <div>
+    <%=f.label :content%>
+    <%=f.text_area :content, :rows=>5, :id => "content" %>
+  </div>
+
+  <div>
+    <%=f.submit %>
+  </div>
+<%end%>

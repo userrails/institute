@@ -1,0 +1,40 @@
+<div>
+  <div id="search">
+    <%= form_tag courses_path, :method => 'get' do%>
+    <p>
+      <%= text_field_tag "search", nil, :placeholder => 'Course Name'%>
+      <%= submit_tag "search" %>
+    </p>
+    <% end %>
+  </div>
+
+  <h1>List of the course</h1>
+  <table>
+    <p><%=  link_to "Add new course", new_course_path %></p>
+    <%  @courses.each do |course| %>
+      <div id="data<%= course.id %>">
+        <tr>
+          <td>Course Name:</td>
+          <td><%= link_to course.name, course %></td>
+        </tr>
+
+        <tr>
+          <td>Course Fee:</td>
+          <td><%= course.fee %></td>
+        </tr>
+
+        <tr>
+          <td>Course Duration</td>
+          <td><%= course.duration %></td>
+        </tr>
+
+        <tr>
+          <th><%= link_to "Show", course %></th>
+          <th><%= link_to "Edit", edit_course_path(course) %></th>
+          <th><%= link_to "Destroy", course, method: :delete, :confirm=>'Are u sure?', :remote=>true %></th>
+        </tr>
+      </div>
+    <%end%>
+  </table>
+</div>
+

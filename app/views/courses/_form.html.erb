@@ -1,0 +1,84 @@
+<%=  form_for(@course, :remote=>true) do |f|%>
+  <div>
+    <span>
+      <%=  f.label :name %>
+    </span>
+
+    <span>
+      <%= f.text_field :name %>    
+    </span>      
+    <%#=  f.select :name, options_for_select(Course.all.map{|c| [c.name, c.id]}) %>
+  </div>
+
+  <div>
+    <span>
+      <%=  f.label :fee %>
+    </span>
+
+    <span>
+      <%=  f.text_field :fee %>
+    </span>    
+  </div>
+
+  <div>
+    <%=  f.label :duration %>
+    <%=  f.text_field :duration %>
+  </div>
+
+  <div>
+    <%= select_tag :url_name, options_for_select([["try", ""], ["drop", ""], ["drop", ""]])  %>
+  </div>
+
+  <div>
+    <%= f.submit "Save"%>
+  </div>
+
+<div>  
+  <div id="content">
+  This page is useful for the course exists in the database.<br/>
+  Click on the Hide Me button to hide this text.<br />
+  Click on the Show Me button to show the hidden text.<br />
+</div>
+
+  <div id="par">
+  shivraj badu
+  </div>
+
+<div>
+  text1
+  <input type="text" id="text1" />
+</div>
+  
+</div>
+
+<button id="hide" value="first">
+  Hide Me
+</button>
+
+<button id="show" value="second">
+  Show Me
+</button>
+
+<button id="focus" value="focus">
+  Focus
+</button>
+
+<button id="fadeOut" value="focus">
+  fadeOut
+</button>
+
+<button id="fade" value="focus">
+  fadeIn
+</button>
+
+<button id="blur" value="blur">
+  Blur
+</button>
+
+<button id="slide" value="slide">
+  Slide
+</button>
+
+<img id="book" src="favicon.ico" alt="" width="100" height="123" />
+
+<% end %>

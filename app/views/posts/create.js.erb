@@ -1,0 +1,16 @@
+<% if @post.errors.any?  %>
+$("#success").hide();
+$("#error").html("<%= escape_javascript(render 'errors')%>");
+$("#error").show();
+
+<% else %>
+
+  $("#error").hide();
+  $("#success").html("<%= escape_javascript(flash[:notice])%>");
+  $("#success").show();
+
+  $("input#title").val("");
+  $("#content").val("");
+  $("#post").html("<%= escape_javascript(render(:partial => 'posts')) %>");
+  
+<% end %>

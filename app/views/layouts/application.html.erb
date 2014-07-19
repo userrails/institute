@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Institute</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+   
+  <div id="header">
+    <%=link_to("Logout", destroy_user_session_path, :method => :delete)%>
+  </div>
+
+  <div id="container">
+    <%= yield %>
+  </div>
+
+  <div  style="margin-left: 800px; margin-right: 10px; color: red;">
+    <small>
+    &copy; shivraj.com registered version
+  </small>
+  </div>
+</body>
+</html>
